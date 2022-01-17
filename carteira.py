@@ -1,3 +1,6 @@
+import pandas as pd
+from papel import *
+
 
 class Carteira:
     def __init__(self):
@@ -5,6 +8,29 @@ class Carteira:
         self.ativos = []
         self.historico = {"data": [], "Patrimônio": [], "rentabilidade": []}
         self._rentabilidade_periodo = 0
+
+
+
+        for ativo in self._carteira.ativos:
+            df1 = pd.DataFrame(ativo.get_historico_formatado())
+            print("\n", "O PAPEL", ativo.codigo, " TEVE UM A RENTABILIDADE ACUMULADA DE :", ativo.rentabilidade_periodo)
+            print(df1.set_index("data"))
+
+    def adiciona_papel(self, periodo, codigos):
+
+
+
+        df2 = pd.DataFrame(self._carteira.get_historico_formatado())
+
+        print("\n", " SUA CARTEIRA TEVE UMA  rentabilidade acumulada no período: ".upper(),
+              self._carteira.rentabilidade_periodo)
+        print(df2.set_index("data"))
+
+    def add_ativo(self, *papeis):
+        # Verificar se já esxiste papel na carteira
+        for papel in papeis:
+            self.ativos.append(papel)
+            self.update_capital()
 
     def get_rentabilidade(self):
         valor_inicio = self.historico["Patrimônio"][0]
@@ -18,11 +44,7 @@ class Carteira:
 
         return "{:.2f}%".format(self._rentabilidade_periodo)
 
-    def add_ativo(self, *papeis):
-        # Verificar se já esxiste papel na carteira
-        for papel in papeis:
-            self.ativos.append(papel)
-            self.update_capital()
+
 
     def update_capital(self):
         tamanho_lista = len(self.ativos)

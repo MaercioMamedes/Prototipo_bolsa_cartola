@@ -1,0 +1,3 @@
+usuario cria Carteira
+Carteira Adiciona papel
+Papel baixa dados b3

@@ -11,7 +11,8 @@ class Repositorio:
         print(len(codigos))
         if len(codigos) >= 2:
             for codigo in codigos:
-                self.lista_papeis.append(Papel(codigo, dados_b3['Close'][codigo]))
+                papel = Papel(codigo, dados_b3['Close'][codigo])
+                self.lista_papeis.append(papel)
         else:
             self.lista_papeis.append(Papel(codigos[0], dados_b3['Close']))
 

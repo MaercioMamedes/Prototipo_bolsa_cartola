@@ -1,26 +1,53 @@
 <component name="InspectionProjectProfileManager">
   <profile version="1.0">
     <option name="myName" value="Project Default" />
-    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
-      <option name="ignoredPackages">
+    <inspection_tool class="BuildoutUnresolvedPartInspection" enabled="true" level="INFORMATION" enabled_by_default="true" />
+    <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
         <value>
-          <list size="13">
-            <item index="0" class="java.lang.String" itemvalue="six" />
-            <item index="1" class="java.lang.String" itemvalue="multitasking" />
-            <item index="2" class="java.lang.String" itemvalue="python-dateutil" />
-            <item index="3" class="java.lang.String" itemvalue="numpy" />
-            <item index="4" class="java.lang.String" itemvalue="requests" />
-            <item index="5" class="java.lang.String" itemvalue="pandas" />
-            <item index="6" class="java.lang.String" itemvalue="yfinance" />
-            <item index="7" class="java.lang.String" itemvalue="certifi" />
-            <item index="8" class="java.lang.String" itemvalue="charset-normalizer" />
-            <item index="9" class="java.lang.String" itemvalue="lxml" />
-            <item index="10" class="java.lang.String" itemvalue="pytz" />
-            <item index="11" class="java.lang.String" itemvalue="urllib3" />
-            <item index="12" class="java.lang.String" itemvalue="idna" />
+          <list size="11">
+            <item index="0" class="java.lang.String" itemvalue="nobr" />
+            <item index="1" class="java.lang.String" itemvalue="noembed" />
+            <item index="2" class="java.lang.String" itemvalue="comment" />
+            <item index="3" class="java.lang.String" itemvalue="noscript" />
+            <item index="4" class="java.lang.String" itemvalue="embed" />
+            <item index="5" class="java.lang.String" itemvalue="script" />
+            <item index="6" class="java.lang.String" itemvalue="td" />
+            <item index="7" class="java.lang.String" itemvalue="form" />
+            <item index="8" class="java.lang.String" itemvalue="thead" />
+            <item index="9" class="java.lang.String" itemvalue="input" />
+            <item index="10" class="java.lang.String" itemvalue="select" />
           </list>
         </value>
       </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="W605" />
+          <option value="E101" />
+          <option value="E117" />
+          <option value="E231" />
+          <option value="E115" />
+          <option value="E265" />
+          <option value="E225" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyTypeCheckerInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="false" level="WARNING" enabled_by_default="false">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="enquetes.models.Pergunta.objects" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnusedLocalInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="SpellCheckingInspection" enabled="false" level="TYPO" enabled_by_default="false">
+      <option name="processCode" value="true" />
+      <option name="processLiterals" value="true" />
+      <option name="processComments" value="true" />
     </inspection_tool>
   </profile>
 </component>

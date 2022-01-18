@@ -26,6 +26,12 @@ class menu:
         print("ESCOLHA UMA DAS OPÇÕES")
         menu = defaultdict({})
         escolha = int(input("1 - MOSTRAR USUÁRIOS 2 - CRIAR USUÁRIO 3 - MOSTRAR CLASSIFICAÇÃO:  "))
+        if escolha == 1:
+            self.mostrar_usuarios()
+        elif escolha == 2:
+            self.criar_usuario()
+        else:
+            print("opção inválida")
 
 
 

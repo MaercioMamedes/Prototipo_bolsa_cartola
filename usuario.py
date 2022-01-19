@@ -28,10 +28,17 @@ class Usuario:
     def verifica_carteira(self):
         self._criou_carteira = True if not self._carteira else False
 
-    def adiciona_papel(self, codigo):
-        if self._carteira.verifica_papel(codigo):
-            pass
-
-
-
+    def compra_papel(self, repositorio, codigo):
+        verificador = repositorio.varifica_papel(codigo)[0]
+        index_papel = repositorio.varifica_papel(codigo)[1]
+        if verificador:
+            papel = repositorio.lista_papeis[index_papel]
+            if papel not in self._carteira:
+                self._carteira.adiciona_papel(papel)
+            else:
+                print("Você já possui esse ativo na carteira")
+        else:
+            repositorio.download_b3("1mo", [codigo])  # tratar erro de entrada
+            papel = repositorio.lista_papeis[-1]
+            self._carteira.adiciona_papel(papel)
 

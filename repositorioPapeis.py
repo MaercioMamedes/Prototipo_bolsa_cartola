@@ -17,8 +17,9 @@ class Repositorio:
             self.lista_papeis.append(Papel(codigos[0], dados_b3['Close']))
 
     def varifica_papel(self, codigo):
-        for papel in self.lista_papeis:
-            if papel.codigo == codigo:
-                return True
+        for index in range(len(self.lista_papeis)):
+            codigo_papel = self.lista_papeis[index].codigo
+            if codigo_papel == codigo:
+                return True, index
         else:
-            return False
+            return False, None

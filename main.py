@@ -1,11 +1,11 @@
-from repositorioPapeis import *
+import os
 from usuario import *
-from collections import *
 
 
-class menu:
+class Menu:
+    repositorio = Repositorio()
+
     def __init__(self):
-        self._repositorio = Repositorio()
         self._lista_usuarios = []
 
     def criar_usuario(self):
@@ -13,18 +13,29 @@ class menu:
         telefone = input("Digite seu telefone: ")
         email = input("Digite seu email:  ")
         self._lista_usuarios.append(Usuario(nome, telefone, email))
+        self.flag()
+        self.main()
 
     def mostrar_usuarios(self):
-        if len(self._lista_usuarios) !=0:
+        if len(self._lista_usuarios) != 0:
             print("USUÁRIOS CADASTRADOS")
             for index, usuario in enumerate(self._lista_usuarios):
-                print(f"{index+1} - {usuario.nome}")
+                print(f"{index + 1} - {usuario.nome}")
+        else:
+            print("NENHUM USUÁRIO CADASTRADO")
 
+        escolha = int(input("Selecione o usuário: "))
+        self.flag()
+        self.main()
+
+    @staticmethod
+    def flag():
+        confirm = input("Pressione qualquer tecla para continuar: ")
+        os.system("clear")
 
     def main(self):
         print("Jogo da bolsa")
         print("ESCOLHA UMA DAS OPÇÕES")
-        menu = defaultdict({})
         escolha = int(input("1 - MOSTRAR USUÁRIOS 2 - CRIAR USUÁRIO 3 - MOSTRAR CLASSIFICAÇÃO:  "))
         if escolha == 1:
             self.mostrar_usuarios()
@@ -35,4 +46,5 @@ class menu:
 
 
 if __name__ == "__main__":
-    main()
+    menu = Menu()
+    menu.main()
